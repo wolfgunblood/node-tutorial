@@ -1,0 +1,18 @@
+{
+  "name": "1-node",
+  "version": "1.0.0",
+  "description": "First Node App",
+  "main": "01-intro.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node-tutorial"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "jalaj",
+  "license": "MIT"
+}
