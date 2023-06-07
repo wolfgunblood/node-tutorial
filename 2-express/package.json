@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/wolfgunblood/node-tutorial/issues"
   },
-  "homepage": "https://github.com/wolfgunblood/node-tutorial#readme"
+  "homepage": "https://github.com/wolfgunblood/node-tutorial#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
