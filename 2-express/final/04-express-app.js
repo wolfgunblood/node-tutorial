@@ -10,8 +10,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 })
 
-
-
 app.all('*', (req, res) => {
     res.status(404).send("<h1>resource not found</h1>")
 })
