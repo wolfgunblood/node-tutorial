@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const login = (req, res) => {
 //   const token = req.headers.authorization;
     const {username, password} = req.body;
-    
+    console.log("Hi")
     const id = new Date().getTime();
     // const token = jwt.sign({id, username}, process.env.SECRET_KEY);
 
