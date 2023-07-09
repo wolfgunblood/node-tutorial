@@ -1,16 +1,23 @@
 const jwt = require("jsonwebtoken");
 
-const login = (req, res) => {
+const login = async (req, res) => {
 //   const token = req.headers.authorization;
     const {username, password} = req.body;
-    console.log("Hi")
-    const id = new Date().getTime();
-    // const token = jwt.sign({id, username}, process.env.SECRET_KEY);
+    // console.log("Hi")
 
-    res.status(200).json({ msg : "user created"})
+    if(username === "" && password === ""){
+        res.status(404).send("Please provide email and password")
+    }
+
+    const id = new Date().getTime();
+    const token = jwt.sign({id, username}, process.env.SECRET_KEY,{
+        expiresIn : "30d",
+    });
+
+    res.status(200).json({ msg : "user created",token})
 }
 
-const dashboard = (req, res) => {
+const dashboard = async (req, res) => {
     const luckyNumber = Math.floor(Math.random() * 100);
     res.status(200).json({
         msg : `Hello ${req.user.username}`,
