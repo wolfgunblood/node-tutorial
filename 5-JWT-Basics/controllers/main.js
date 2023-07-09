@@ -10,7 +10,7 @@ const login = async (req, res) => {
     }
 
     const id = new Date().getTime();
-    const token = jwt.sign({id, username}, process.env.SECRET_KEY,{
+    const token = jwt.sign({id, username}, process.env.JWT_SECRET,{
         expiresIn : "30d",
     });
 
@@ -19,6 +19,7 @@ const login = async (req, res) => {
 
 const dashboard = async (req, res) => {
     const luckyNumber = Math.floor(Math.random() * 100);
+    console.log(req.user)
     res.status(200).json({
         msg : `Hello ${req.user.username}`,
         secret: `Here is your authorized data, your lucky number is ${luckyNumber}`,
